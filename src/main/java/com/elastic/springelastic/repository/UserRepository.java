@@ -1,6 +1,6 @@
 package com.elastic.springelastic.repository;
 
-import com.test.elastic.springelastictest.model.Users;
+import com.elastic.springelastic.model.Users;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
 

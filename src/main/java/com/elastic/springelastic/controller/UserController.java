@@ -1,8 +1,8 @@
 package com.elastic.springelastic.controller;
 
-import com.test.elastic.springelastictest.model.Users;
-import com.test.elastic.springelastictest.service.UserService;
-import com.test.elastic.springelastictest.service.UserServiceImpl;
+import com.elastic.springelastic.service.UserService;
+import com.elastic.springelastic.model.Users;
+import com.elastic.springelastic.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
