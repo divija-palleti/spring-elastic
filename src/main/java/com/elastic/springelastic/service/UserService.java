@@ -2,6 +2,8 @@ package com.elastic.springelastic.service;
 
 import com.elastic.springelastic.model.Users;
 import com.elastic.springelastic.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 

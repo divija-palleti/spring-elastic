@@ -1,5 +1,8 @@
 package com.elastic.springelastic.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.elasticsearch.annotations.Document;
+
 @Document(indexName = "users", shards = 1)
 public class Users {
 
