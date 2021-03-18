@@ -5,6 +5,7 @@ import com.elastic.springelastic.repository.UserRepository;
 
 import java.util.List;
 
+@Service
 public class UserService {
     private UserRepository userRepository;
 
