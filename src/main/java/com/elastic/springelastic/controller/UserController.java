@@ -38,4 +38,10 @@ public class UserController {
 
         return userService.findByName(name);
     }
+
+    @GetMapping("/findSalary/{minSal}/{maxSal}")
+    public SearchHits<Users> findSalary(@PathVariable String minSal, @PathVariable String maxSal) {
+
+        return userService.findSalary(minSal, maxSal );
+    }
 }

@@ -2,11 +2,13 @@ package com.elastic.springelastic.service;
 
 import com.elastic.springelastic.model.Users;
 import com.elastic.springelastic.repository.UserRepository;
+import org.elasticsearch.index.query.QueryBuilders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
 import org.springframework.data.elasticsearch.core.SearchHits;
 import org.springframework.data.elasticsearch.core.query.Criteria;
 import org.springframework.data.elasticsearch.core.query.CriteriaQuery;
+import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
 import org.springframework.data.elasticsearch.core.query.Query;
 import org.springframework.stereotype.Service;
 
@@ -54,4 +56,11 @@ public class UserService {
             Query query = new CriteriaQuery(criteria);
             return elasticsearchOperations.search(query, Users.class);
         }
+
+    public SearchHits<Users> findSalary(String minSal, String maxSal) {
+        Query query = new NativeSearchQueryBuilder()
+                .withQuery(QueryBuilders.rangeQuery("salary").lt(maxSal).gt(minSal))
+                .build();
+        return elasticsearchOperations.search(query, Users.class);
+    }
 }
