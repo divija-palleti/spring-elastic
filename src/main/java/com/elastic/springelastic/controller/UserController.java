@@ -2,8 +2,8 @@ package com.elastic.springelastic.controller;
 
 import com.elastic.springelastic.service.UserService;
 import com.elastic.springelastic.model.Users;
-import com.elastic.springelastic.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.elasticsearch.core.SearchHits;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,6 +22,9 @@ public class UserController {
 
     @PostMapping("/save")
     public Users saveUser(@RequestBody Users users) {
+        System.out.println(users);
+        System.out.println("klkkk");
+
         return userService.save(users);
     }
 
@@ -31,7 +34,7 @@ public class UserController {
     }
 
     @GetMapping("/findByName/{name}")
-    public List<Users> findByName(@PathVariable String name) {
+    public SearchHits<Users> findByName(@PathVariable String name) {
 
         return userService.findByName(name);
     }
