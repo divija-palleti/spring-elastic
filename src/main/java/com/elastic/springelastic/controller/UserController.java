@@ -44,4 +44,9 @@ public class UserController {
 
         return userService.findSalary(minSal, maxSal );
     }
+
+    @GetMapping(path = "/search")
+    public SearchHits<Users> searchUsers(@RequestParam String keywords) {
+        return userService.search(keywords);
+    }
 }

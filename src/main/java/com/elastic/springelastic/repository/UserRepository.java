@@ -9,5 +9,6 @@ import java.util.List;
 @Repository
 public interface UserRepository extends ElasticsearchRepository<Users, String> {
     List<Users> findByName(String name);
+
 }
 

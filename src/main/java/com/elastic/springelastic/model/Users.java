@@ -2,12 +2,17 @@ package com.elastic.springelastic.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
+import org.springframework.data.elasticsearch.annotations.Setting;
 
 @Document(indexName = "users", shards = 1)
+@Setting(settingPath = "es-config/elastic-analyzer.json")
 public class Users {
 
     @Id
     private String id;
+    @Field(type = FieldType.Text, analyzer = "autocomplete_index", searchAnalyzer = "autocomplete_search")
     private String name;
     private String teamName;
     private Long salary;
