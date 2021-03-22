@@ -67,4 +67,8 @@ public class UserService {
         Query query = new NativeSearchQuery(searchByNames);
         return elasticsearchOperations.search(query, Users.class);
     }
+
+    public boolean delete() {
+        return elasticsearchOperations.deleteIndex(Users.class);
+    }
 }

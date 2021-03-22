@@ -23,7 +23,6 @@ public class UserController {
     @PostMapping("/save")
     public Users saveUser(@RequestBody Users users) {
         System.out.println(users);
-        System.out.println("klkkk");
 
         return userService.save(users);
     }
@@ -47,6 +46,13 @@ public class UserController {
 
     @GetMapping(path = "/search")
     public SearchHits<Users> searchUsers(@RequestParam String keywords) {
+        System.out.println(keywords);
         return userService.search(keywords);
+    }
+
+    @GetMapping(value = "/delete")
+    public boolean delete() {
+        return userService.delete();
+//        return template.deleteIndex(Users.class);
     }
 }

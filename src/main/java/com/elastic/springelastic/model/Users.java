@@ -7,7 +7,7 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 import org.springframework.data.elasticsearch.annotations.Setting;
 
 @Document(indexName = "users", shards = 1)
-@Setting(settingPath = "es-config/elastic-analyzer.json")
+@Setting(settingPath = "resources/es-config/elastic-analyzer.json")
 public class Users {
 
     @Id
